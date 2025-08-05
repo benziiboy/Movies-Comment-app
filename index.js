@@ -33,6 +33,10 @@ mongoose.connect(process.env.URI, {
 // Routes using actual database
 
 // Index - Show all references
+app.get('/', (req, res)=>{
+    res.redirect('/references')
+})
+
 app.get('/references', async (req, res) => {
     try {
         const references = await Reference.find({});
