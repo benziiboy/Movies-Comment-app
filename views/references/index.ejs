@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References</title>
+
+
+</head>
+
+<body>
+    <%- include('../partials/navbar.ejs') %>
+    <section style="background-color: #e7effd;" >
+        <div class="container my-2 py-2">
+            <h4 class="mb-0">Recent references</h4>
+    <p class="fw-light mb-4 pb-2">Latest references section by users</p>
+            <% for(let r of references) {%>
+
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-12 col-lg-10">
+              <div class="card text-body">
+                <div class="card-body p-4">
+                  
+                  <div class="d-flex flex-start">
+                    <img class="rounded-circle shadow-1-strong me-3"
+                      src="https://random.imagecdn.app/500/300" alt="avatar" width="60"
+                      height="60" />
+                    <div>
+
+                
+                          
+                      <h6 class="fw-bold mb-1"> <%= r.username %></h6>
+                      <div class="d-flex align-items-center mb-3">
+                        <p class="mb-0">
+                          March 07, 2021
+                        </p>
+                      </div>
+                      <p class="mb-0">
+                        <%= r.reference %>
+                      </p>
+                      <a href="references/<%= r.id %>"  class="card-link">Details</a>
+                     
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <a href="/references/new" class="btn btn-primary"  style=" margin: 4%; margin-left: 9%;">New reference</a>
+
+</div>
+
+      </section>
+      
+
+      <%- include('../partials/footer.ejs') %>
+
+
+
+
+</body>
+
+
+
+</html>

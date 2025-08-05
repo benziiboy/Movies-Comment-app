@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New reference</title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+
+
+    <section style="background-color:#e7effd;">
+        <div class="container my-5 py-5 text-body">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-6">
+              <div class="card">
+                <div class="card-body p-4">
+                  <div class="d-flex flex-start w-100">
+                    <img class="rounded-circle shadow-1-strong me-3"
+                      src="https://random.imagecdn.app/500/300" alt="avatar" width="65"
+                      height="65" />
+                    <div class="w-100">
+
+
+                        <form action="/references" method="post">
+                            <section style="margin: 2%;" >
+                                <label for="username" class="h5" >Enter username:</label>
+                                <br>
+                          
+                           
+                                <input    class="form-control"  type="text" id="username" name="username" placeholder="Username" >
+                            </section>
+                    
+                            <section style="margin: 2%;">
+                            
+                                <label for="reference" class="h5"  >Reference Text:</label>
+                                <br>
+                                <textarea   class="form-control" id="textAreaExample" rows="4" name="reference" id="reference"  ></textarea>
+                                
+                            </section>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        <br>
+                        <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger " >
+                            <a href="/references" style=" text-decoration: none; color: white;">Cancel</a> <i class="fas fa-long-arrow-alt-right ms-1"></i>
+
+    </button>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+</body>
+
+</html>
